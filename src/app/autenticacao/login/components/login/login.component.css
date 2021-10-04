@@ -1,0 +1,17 @@
+.view-login {
+    height: 100vh;
+}
+
+.body-login {
+    margin: 0px;
+    max-width: 100%;
+    background-image: url("../../../../../assets/login.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-color: #089b03;
+}
+
+.body-login > .card {
+    opacity: 1;
+}

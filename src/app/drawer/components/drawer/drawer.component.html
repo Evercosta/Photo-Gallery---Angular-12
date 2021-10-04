@@ -1,0 +1,50 @@
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+      <button sidebarjsToggle class="btn btn-primary " type="submit">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <a class="navbar-brand ">
+        <img 
+            src="/assets/icon.png" alt="" 
+            width="30" height="30" class="d-inline-block align-text-top">
+        Photo Gallery
+      </a>
+    </div>
+</nav>
+<sidebarjs-element (open)="onOpen()" (close)="onClose()" (changeVisibility)="onChangeVisibility($event)">
+  <div class="list-group">
+    <a routerLink="" 
+      routerLinkActive="active" 
+      [routerLinkActiveOptions]="{exact: true}"
+      class="list-group-item list-group-item-action"
+      sidebarjsToggle
+    >
+      <i class="fas fa-home"></i> Ínicio
+    </a>
+    <a routerLink="user" 
+      routerLinkActive="active" 
+      class="list-group-item list-group-item-action"
+      sidebarjsToggle
+    >
+      <i class="fas fa-user"></i> Usuário
+    </a>
+    <a routerLink="photo" 
+      routerLinkActive="active" 
+      class="list-group-item list-group-item-action"
+      sidebarjsToggle
+    >
+      <i class="fas fa-image"></i> Fotos
+    </a>
+    <a (click)="logout()"
+      class="list-group-item list-group-item-action cursor-pointer"
+      sidebarjsToggle
+    >
+    <i class="fas fa-sign-out-alt"></i> Sair
+    </a>
+  </div>
+</sidebarjs-element>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
