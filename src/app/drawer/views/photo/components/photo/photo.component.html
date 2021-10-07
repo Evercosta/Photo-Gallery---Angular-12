@@ -29,6 +29,7 @@
             >
                 <div 
                     style="width: 100%; height: 200px;"
+                    class="rounded"
                     [ngStyle]="{'background-image': item.url ? 'url(' + getUrlImage(item.url) + ')' : 'https://placehold.it/70x70', 'background-position': 'center' }"
                 ></div>
             </a>
@@ -49,7 +50,6 @@
             src="{{getUrlImage(selectedPhoto.url)}}" 
             alt=""
             style="max-width: 100%;"
-            class="rounded"
         >
     </div>
 </ng-template>
