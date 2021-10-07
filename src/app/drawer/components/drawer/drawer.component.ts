@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { SidebarjsService } from 'ng-sidebarjs';
 
 @Component({
@@ -12,17 +12,11 @@ export class DrawerComponent implements OnInit {
   // subscribeRoute:
   constructor(
     private readonly sidebarjsService: SidebarjsService,
-    private router: Router,
-    private route: ActivatedRoute
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe(
-      (data: any) => {
-        console.log('rota: ', data);
-        
-      }
-    );
+    
     
   }
 

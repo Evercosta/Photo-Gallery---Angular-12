@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../guards/auth.guard';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import { HomeComponent, PhotoComponent } from './views';
 import { UserComponent } from './views';
@@ -9,9 +10,21 @@ const DrawerRoutes: Routes = [
       path: '', 
       component: DrawerComponent,
       children: [
-        { path: '', component: HomeComponent },
-        { path: 'user', component: UserComponent },
-        { path: 'photo', component: PhotoComponent }
+        { 
+          path: '', 
+          component: HomeComponent,
+          canActivate: [AuthGuard], 
+        },
+        { 
+          path: 'user', 
+          component: UserComponent,
+          canActivate: [AuthGuard], 
+        },
+        { 
+          path: 'photo', 
+          component: PhotoComponent, 
+          canActivate: [AuthGuard], 
+        }
       ]
     }
 ];
