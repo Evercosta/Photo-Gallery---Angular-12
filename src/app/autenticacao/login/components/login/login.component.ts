@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/']);
         },
         err => {
-          console.log(err);
           this.toastr.error(err.error.mensagem, 'Erro!');
           this.loading = false
         });
